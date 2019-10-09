@@ -37,7 +37,7 @@ app.use(helmet.hsts({
 if (app.get('env') !== 'development') {
   app.use((req, res, next) => {
     const err = new Error('Not Found: ' + req.url);
-    err.status = 404;
+    err.status =   404:
     next(err);
   });
 }
