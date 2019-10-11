@@ -62,6 +62,10 @@ module.exports = function (sequelize, DataTypes) {
     delete values.password;
     return values;
   };
-
+  User.associate = function (models) {
+    User.hasMany(models.Document, {
+      onDelete: 'cascade'
+    });
+  };
   return User;
 };
