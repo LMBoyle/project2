@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const passport = require('passport');
 const moment = require('moment');
 const helmet = require('helmet');
-const PORT = process.env.PORT || 3333;
+const PORT = process.env.PORT || 3334;
 const app = express();
 const db = require('./models');
 
@@ -17,7 +17,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 if (app.get('env') !== 'test') {
-  app.use(morgan('dev')); // Hook up the HTTP logger
+  app.use(morgan('dev')); // Hook up the HTTP logger 
 }
 
 app.use(express.static('public'));

@@ -70,12 +70,26 @@ module.exports = (db) => {
     }
   });
 
-  // Load example page and pass in an example by id
-  router.get('/example/:id', function (req, res) {
+  // load DBD landing page
+  router.get('/documents', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
-        res.render('example-detail', {
-          example: dbExample
+      db.Example.findAll({}).then(function (dbDocuments) {
+        res.render('documents', {
+          msg: 'Welcome!',
+          examples: dbDocuments
+        });
+      });
+    } else {
+      res.redirect('/');
+    }
+  });
+
+  // Load landing and pass in an document by id
+  router.get('/document/:id', function (req, res) {
+    if (req.isAuthenticated()) {
+      db.Document.findOne({ where: { id: req.params.id } }).then(function (dbDocument) {
+        res.render('document-detail', {
+          document: dbDocument
         });
       });
     } else {
