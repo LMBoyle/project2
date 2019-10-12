@@ -1,0 +1,23 @@
+
+<form>
+
+    <!-- if doctype= drivers license then
+    display all partials that are true -->
+
+    <div class="form-group">
+        {{#if dlnum }}
+             <div>{{> main/dlnum }}</div>
+        {{/if}}
+
+        {{#if addinfo }} 
+            <div>{{> main/addinfo }}</div>
+        {{/if}}
+
+        {{#if attachment}}
+            <div>{{> main/attachment}}</div>
+        {{/if}}
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
