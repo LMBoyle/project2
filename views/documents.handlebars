@@ -1,5 +1,6 @@
 {{> nav/nav-block}}
 
+
 <div id="home">
   <div class="container">
     <div class="row">
@@ -12,13 +13,16 @@
           </div>
           <div class="form-group">
             <label for="document-description">Below is the list of all documents that you can add to the DBD Vault</label>
-           
-          </div>
-          Drivers License <button id="submit" class="btn btn-primary float-right">Add</button>
-          Passport <button id="submit" class="btn btn-primary float-right">Add</button>
-          Will <button id="submit" class="btn btn-primary float-right">Add</button>
+          _____________________________________________________
+            {{> main/new}} 
           
-
+          __________________________________________________________-
+          
+          </div>
+          <div>Drivers License <button id="submit dl" class="btn btn-primary float-right">Add</button></div> 
+        
+          <div>Passport <button id="submit" class="btn btn-primary float-right">Add</button></div>
+          <div>Will <button id="submit" class="btn btn-primary float-right">Add</button></div>
           
         </form>
         <h3>documents:</h3>
