@@ -63,7 +63,7 @@ module.exports = function (sequelize, DataTypes) {
     return values;
   };
   User.associate = function (models) {
-    User.hasMany(models.Document, {
+    User.hasMany(models.DriversLicense, {
       onDelete: 'cascade'
     });
   };
