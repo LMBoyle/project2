@@ -10,8 +10,8 @@ module.exports = {
     }
   },
   test: {
-    username: root,
-    password: 1234,
+    username: process.env.TU,
+    password: process.env.TP || null,
     database: 'DeathByDocuments_test',
     details: {
       host: 'localhost',
