@@ -43,4 +43,4 @@ module.exports = function (db) {
       } catch (err) { console.log('Problem with statement 3'); }
     }
   };
-}
+};
