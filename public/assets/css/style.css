@@ -12,7 +12,7 @@ body {
   color: black;
 }
 
-.btn {
+.btn .btn-link {
   color:white;
   background:#cadde1;
   border: 1px solid white;
@@ -42,7 +42,7 @@ body {
   height:100%;
   border-radius: .25rem;
   margin-bottom: 2%;
-  width: 600px;
+  width: 1000px;
 }
 
 [data-useremail="true"] {
@@ -67,8 +67,15 @@ hr {
 
 .list-group-item {
   line-height: 2.5;
+  color: grey;
 }
 
 .card-body {
   color: #444;
 }
+
+.icon {
+  width:25px;
+  height:25px;
+}
+
