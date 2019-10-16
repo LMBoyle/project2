@@ -1,25 +1,27 @@
 {{> nav/nav-block user=true register=true}}
 
+ <h1>{{msg}}</h1>
 
 <div id="home">
   <div class="container">
     <div class="row">
 
       <div class="col-4 ">
-      <h2>Documents</h2>
         <ul class= "list-group list-group-flush">
-          <li class="list-group-item "> <button type="button" class="btn btn-link float-right" ><i class="fas fa-plus"></i></button>Drivers License </li>
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right" ><i class="fas fa-plus"></i></button> Passport </li> 
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right"><i class="fas fa-plus"></i></button> Wills </li>
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right"><i class="fas fa-plus"></i></button> Life Insurance Policies </li>
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right"><i class="fas fa-plus"></i></button> Bank Accounts </li>
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right"><i class="fas fa-plus"></i></button> Social Media </li> 
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right"><i class="fas fa-plus"></i></button> Documents and Photos </li>
+      
+        <li class="list-group-item "> <h2>Documents</h2></li>
+          <li class="list-group-item "> <button type="button" class="btn btn-link float-right" data-docType={{docType}} ><i class="fas fa-plus"></i></button>Drivers License </li>
+          <li class="list-group-item"><button type="button" class="btn btn-link float-right" data-docType={{docType}}><i class="fas fa-plus"></i></button> Passport </li> 
+          <li class="list-group-item"><button type="button" class="btn btn-link float-right"data-docType={{docType}}><i class="fas fa-plus"></i></button> Wills </li>
+          <li class="list-group-item"><button type="button" class="btn btn-link float-right" data-docType={{docType}}><i class="fas fa-plus"></i></button> Bank Accounts </li>
+          <li class="list-group-item"><button type="button" class="btn btn-link float-right" data-docType={{docType}}><i class="fas fa-plus"></i></button> Social Media </li> 
+          <li class="list-group-item"><button type="button" class="btn btn-link float-right" data-docType={{docType}} ><i class="fas fa-plus"></i></button> Documents and Photos </li>
+          <li class="list-group-item"><button type="button" class="btn btn-link float-right" data-docType={{docType}} ><i class="fas fa-plus"></i></button> Add any type of document </li>
         </ul>
       </div>
 
       <div class="col-8 ">
-        <h1>{{msg}}</h1>
+       
 
   
 <div class="card" style="width: 40rem;">
@@ -29,18 +31,18 @@
     <p class="card-text">Your Documents</p>
     <ul class= "list-group list-group-flush">
       <li class="list-group-item float-right">Drivers License  
-          <button type="button" class="btn btn-link float-right">
+          <button type="button" class="btn btn-link float-right" data-docType={{docType}}>
             <i class="far fa-edit"></i> 
           </button>
-          <button type="button" class="btn btn-link float-right"> 
+          <button type="button" class="btn btn-link float-right" data-docType={{docType}}> 
             <i class="far fa-trash-alt"></i>
           </button>
       </li>
       <li class="list-group-item float-right">Passport
-          <button type="button" class="btn btn-link float-right">
+          <button type="button" class="btn btn-link float-right" data-docType={{docType}}>
             <i class="far fa-edit"></i> 
           </button>
-          <button type="button" class="btn btn-link float-right"> 
+          <button type="button" class="btn btn-link float-right" data-docType={{docType}}> 
             <i class="far fa-trash-alt"></i>
           </button>
       </li>
@@ -64,7 +66,6 @@
 
 
     
-        {{> main/new}} 
       </div>
               <ul id="document-list" class="list-group">
           {{#each documents}}
