@@ -28,7 +28,7 @@ module.exports = (db) => {
   db.Documents.create({
     docFirstName: 'joe',
     docLastName: 'gates',
-    docType: 'Wills'
+    docType: 'Last Will & Testament'
   });
   db.Documents.create({
     docFirstName: 'joe',
@@ -44,10 +44,5 @@ module.exports = (db) => {
     docFirstName: 'joe',
     docLastName: 'gates',
     docType: 'Documents and Photos'
-  });
-  db.Documents.create({
-    docFirstName: 'joe',
-    docLastName: 'gates',
-    docType: 'Social Media'
   });
 };
