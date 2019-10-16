@@ -21,7 +21,9 @@ module.exports = {
     }
   },
   production: {
-    'use_env_variable': 'JAWSDB_URL',
+    username: process.env.JAWS_USER,
+    password: process.env.JAWS_PASS || null,
+    database: 'DeathByDocuments_pro',
     details: {
       dialect: 'mysql'
     }
