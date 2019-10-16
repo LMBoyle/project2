@@ -22,7 +22,7 @@ module.exports = function (db) {
     // Get all documents
     getDocuments: async (req, res) => {
       try {
-        const results = await db.Documents.findAll({});
+        const results = await db.Documents.findAll({ where: { UserId: req.params.id } });
         res.json(results);
       } catch (err) { console.log('Problem with statement 1'); }
     },
@@ -32,7 +32,7 @@ module.exports = function (db) {
         const results = await db.Documents.create(req.body);
         res.json(results);
       } catch (err) {
-        console.log('Problem with statment 2');
+        console.log('Problem with statement 2');
       }
     },
     // Delete an example by id
