@@ -1,5 +1,6 @@
 module.exports = function (db) {
   return {
+    /*
     // Get all examples
     getExamples: function (req, res) {
       db.Example.findAll({}).then(function (dbExamples) {
@@ -18,6 +19,7 @@ module.exports = function (db) {
         res.json(dbExample);
       });
     },
+    */
 
     // Get all documents
     getDocuments: async (req, res) => {
