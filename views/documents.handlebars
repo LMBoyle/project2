@@ -1,88 +1,84 @@
-{{> nav/nav-block user=true register=true}}
 
- <h1>{{msg}}</h1>
+{{> nav/nav-block}}
 
 <div id="home">
   <div class="container">
+    <h1>{{msg}}</h1>
     <div class="row">
 
-      <div class="col-4 ">
-        <ul class= "list-group list-group-flush">
-      
-        <li class="list-group-item "> <h2>Documents</h2></li>
-          <li class="list-group-item "> <button type="button" class="btn btn-link float-right" data-docType={{docType}} ><i class="fas fa-plus"></i></button>Drivers License </li>
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right" data-docType={{docType}}><i class="fas fa-plus"></i></button> Passport </li> 
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right"data-docType={{docType}}><i class="fas fa-plus"></i></button> Wills </li>
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right" data-docType={{docType}}><i class="fas fa-plus"></i></button> Bank Accounts </li>
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right" data-docType={{docType}}><i class="fas fa-plus"></i></button> Social Media </li> 
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right" data-docType={{docType}} ><i class="fas fa-plus"></i></button> Documents and Photos </li>
-          <li class="list-group-item"><button type="button" class="btn btn-link float-right" data-docType={{docType}} ><i class="fas fa-plus"></i></button> Add any type of document </li>
-        </ul>
-      </div>
-
-      <div class="col-8 ">
-       
-
-  
-<div class="card" style="width: 40rem;">
- 
-  <img class="card-img-top" src="assets/images/documents.jpg" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Your Documents</p>
-    <ul class= "list-group list-group-flush">
-      <li class="list-group-item float-right">Drivers License  
-          <button type="button" class="btn btn-link float-right" data-docType={{docType}}>
-            <i class="far fa-edit"></i> 
-          </button>
-          <button type="button" class="btn btn-link float-right" data-docType={{docType}}> 
-            <i class="far fa-trash-alt"></i>
-          </button>
-      </li>
-      <li class="list-group-item float-right">Passport
-          <button type="button" class="btn btn-link float-right" data-docType={{docType}}>
-            <i class="far fa-edit"></i> 
-          </button>
-          <button type="button" class="btn btn-link float-right" data-docType={{docType}}> 
-            <i class="far fa-trash-alt"></i>
-          </button>
-      </li>
-
-
-      </ul>
-  </div>
-</div>
-<div>   <p></p> </div>
-<div class="card" style="width: 40rem;">
- 
-  <img class="card-img-top" src="assets/images/family.jpg" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-title">Your Family</p>
-    <ul class= "list-group list-group-flush">
-          <li class="list-group-item">Spouse</li>
-          <li class="list-group-item">Child 1</li>
-        </ul>
-  </div>
-</div>
-
-
-    
-      </div>
-              <ul id="document-list" class="list-group">
-          {{#each documents}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="document/{{this.id}}">{{this.text}}</a>
-           
+      <div class="col-4" style="padding-top: 15px">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item ">
+            <h2>Documents</h2>
           </li>
+          {{#each doc}}
+            <li class="list-group-item">
+              <button type="button" class="btn btn-link float-right" data-docType={{docType}}>
+                <i class="fas fa-plus"></i>
+              </button> {{docType}}
+            </li>
           {{/each}}
         </ul>
+        
+        <div class="text-center" style="margin-top: 10px">
+          <button type="button" class="btn btn-primary btn-block" data-docType={{docType}}>
+            <i class="fas fa-plus"></i> Add Another Type
+          </button> 
+        </div>
       </div>
+
+      <div class="col-8" style="padding-top: 15px">
+        <div class="card" style="width: 40rem;">
+          <img class="card-img-top" src="assets/images/documents.jpg" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Your Documents</p>
+            <ul class="list-group list-group-flush">
+              {{#each doc}}
+                {{#if docCreated}}
+                  <li class="list-group-item float-right"> {{docType}}
+                    <button type="button" class="btn btn-link float-right" data-docType={{docType}}>
+                      <i class="far fa-edit"></i>
+                    </button>
+                    <button type="button" class="btn btn-link float-right" data-docType={{docType}}>
+                      <i class="far fa-trash-alt"></i>
+                    </button>
+                  </li>
+                {{/if}}
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+        <div>
+          <p></p>
+        </div>
+        <div class="card" style="width: 40rem;">
+
+          <img class="card-img-top" src="assets/images/family.jpg" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-title"> Your Family </p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> Spouse </li>
+              <li class="list-group-item"> Child 1 </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+      </div>
+      <ul id="document-list" class="list-group">
+        {{#each documents}}
+        <li data-id="{{this.id}}" class="list-group-item">
+          <a href="document/{{this.id}}">{{this.text}}</a>
+
+        </li>
+        {{/each}}
+      </ul>
     </div>
   </div>
+</div>
 </div>
 
 <script src="/assets/js/document.js"></script>
 
-
-
 {{> modal/login-block}}
-
