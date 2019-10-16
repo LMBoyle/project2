@@ -102,7 +102,7 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Documents.findAll({}).then(function (dbDocuments) {
         res.render('documents', {
-          msg: 'Welcome!',
+          msg: 'Welcome !',
           examples: dbDocuments
         });
       });
