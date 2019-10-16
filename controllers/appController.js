@@ -24,7 +24,7 @@ module.exports = function (db) {
     // Get all documents
     getDocuments: async (req, res) => {
       try {
-        const results = await db.Documents.findAll({ where: { UserId: req.params.id } });
+        const results = await db.Documents.findAll({});
         res.json(results);
       } catch (err) { console.log('Problem with statement 1'); }
     },

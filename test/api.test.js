@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 
 let request;
 
-describe('GET /api/examples', function () {
+describe('GET /api/documents', function () {
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function () {
@@ -17,11 +17,11 @@ describe('GET /api/examples', function () {
     return db.sequelize.sync({ force: true });
   });
 
-  it('should find all examples', function (done) {
+  it('should find all documents', function (done) {
     // Add some examples to the db to test with
-    db.Example.bulkCreate([
-      { text: 'First Example', description: 'First Description' },
-      { text: 'Second Example', description: 'Second Description' }
+    db.Documents.bulkCreate([
+      { docFirstName: 'First First Name', docLastName: 'First Last Name', docType: 'First Doc Type' },
+      { docFirstName: 'Second First Name', docLastName: 'Second Last Name', docType: 'Second Doc Type' }
     ]).then(function () {
       // Request the route that returns all examples
       request.get('/api/examples').end(function (err, res) {
@@ -36,16 +36,16 @@ describe('GET /api/examples', function () {
         expect(responseStatus).to.equal(200);
 
         expect(responseBody)
-          .to.be.an('array')
+          .to.be.an('object')
           .that.has.lengthOf(2);
 
         expect(responseBody[0])
           .to.be.an('object')
-          .that.includes({ text: 'First Example', description: 'First Description' });
+          .that.includes({ docFirstName: 'First First Name', docLastName: 'First Last Name', docType: 'First Doc Type' });
 
         expect(responseBody[1])
           .to.be.an('object')
-          .that.includes({ text: 'Second Example', description: 'Second Description' });
+          .that.includes({ docFirstName: 'Second First Name', docLastName: 'Second Last Name', docType: 'Second Doc Type' });
 
         // The `done` function is used to end any asynchronous tests
         done();
@@ -54,7 +54,7 @@ describe('GET /api/examples', function () {
   });
 });
 
-describe('POST /api/examples', function () {
+describe('POST /api/documents', function () {
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function () {
@@ -62,16 +62,17 @@ describe('POST /api/examples', function () {
     return db.sequelize.sync({ force: true });
   });
 
-  it('should save an example', function (done) {
+  it('should save a document', function (done) {
     // Create an object to send to the endpoint
     const reqBody = {
-      text: 'Example text',
-      description: 'Example description'
+      docFirstName: 'Example text',
+      docLastName: 'Example description',
+      docType: 'Example type'
     };
 
     // POST the request body to the server
     request
-      .post('/api/examples')
+      .post('/api/documents')
       .send(reqBody)
       .end(function (err, res) {
         const responseStatus = res.status;
