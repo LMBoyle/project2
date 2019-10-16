@@ -56,27 +56,13 @@ module.exports = (db) => {
     }
   });
 
-  // Load example index page
-  router.get('/example', function (req, res) {
-    if (req.isAuthenticated()) {
-      db.Example.findAll({}).then(function (dbExamples) {
-        res.render('example', {
-          msg: 'Welcome!',
-          examples: dbExamples
-        });
-      });
-    } else {
-      res.redirect('/');
-    }
-  });
-
-  // load DBD landing page
+  // Load landing index page
   router.get('/documents', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Example.findAll({}).then(function (dbDocuments) {
+      db.Documents.findAll({}).then(function (dbDocuments) {
         res.render('documents', {
-          msg: 'Welcome!',
-          examples: dbDocuments
+          msg: 'Welcome ' + req.session.passport.user.firstName + '!',
+          doc: dbDocuments
         });
       });
     } else {
@@ -90,33 +76,6 @@ module.exports = (db) => {
       db.Document.findOne({ where: { id: req.params.id } }).then(function (dbDocument) {
         res.render('document-detail', {
           document: dbDocument
-        });
-      });
-    } else {
-      res.redirect('/');
-    }
-  });
-
-  // Load landing index page
-  router.get('/documents', function (req, res) {
-    if (req.isAuthenticated()) {
-      db.Documents.findAll({}).then(function (dbDocuments) {
-        res.render('documents', {
-          msg: 'Welcome !',
-          examples: dbDocuments
-        });
-      });
-    } else {
-      res.redirect('/');
-    }
-  });
-
-  // Load document page and pass in an document by id
-  router.get('/documents/:id', function (req, res) {
-    if (req.isAuthenticated()) {
-      db.Documents.findOne({ where: { id: req.params.id } }).then(function (dbbDocuments) {
-        res.render('documents-detail', {
-          documents: dbbDocuments
         });
       });
     } else {
