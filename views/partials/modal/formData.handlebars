@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"> {{docType}} </h5>
+        <h5 class="modal-title"> Add a new {{docType}} </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -18,53 +18,54 @@
             <label for="name"> Last Name </label>
             <input type="text" class="form-control" id="formLastName" onclick="this.select()" value={{user.lastName}}>
           </div>
-        </form>
-      </div>
-      <div class="container">
+      
+         <hr>
         
-              {{!-- Add ID number --}}
+          {{!-- Add ID number --}}
             <div class="row">   
-                <div class="col-4"><div class = "form-group">
-                    <label  for = "documentID">Document ID</label>
-                </div>
+              <div class="col-5">
+                <label  for = "documentID">Document ID</label>
+              </div>
 
-                <div class="col-4 ">
-                    <input type = "text" class = "form-control" id = "docIdNumber">
-                </div>
+              <div class="col-5 ">
+                <input type = "text" class = "form-control" id = "docIdNumber">
+              </div>
             </div>   
 
-        {{!-- expiration Date --}}>
+        {{!-- expiration Date --}}
             <div class="row">     
-                <div class="col-4 ">
-                    <label>Expiration Date</label>
-                </div>
-                <div class="col-4 "> 
-                    <input type = "text"  id = "docExpiration"  value = "text here" />
-                </div>
+              <div class="col-5 ">
+                <label>Expiration Date</label>
+              </div>
+              <div class="col-5 "> 
+                <input type = "text"  id = "docExpiration"   />
+              </div>
             </div>
                 
 
         {{!-- Add attachment --}}
             <div class="row">
-                <div class="col-4 ">Add Attachment
-                </div>
-                <div class="col-4 ">
-                    <input type="file" name="docPDF" id="docPDF">
-                </div>
+              <div class="col-5 ">Add Attachment
+              </div>
+              <div class="col-5 ">
+                <input type="file" name="docPDF" id="docPDF">
+              </div>
             </div>
 
         {{!-- Additional info --}}
             <div class="row">
-                <div class="col-4 ">
-                    <label>Additional Information</label>
-                </div>
-                <div class="col-4 ">
-                    <input type = "text"  id = "addInfo" value = "text here" />
-                </div>
+              <div class="col-5 ">
+                <label>Additional Information</label>
+              </div>
+              <div class="col-5">
+                <input type = "text"  id = "addInfo"  />
+              </div>
             </div>
 
-        </div>
+     
 
+  </form>
+      </div>
       <div class="modal-footer">
         <button id="submitForm" type="button" class="btn btn-primary"> Add Document </button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
