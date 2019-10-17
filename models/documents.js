@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
   Documents.associate = function (models) {
     Documents.belongsTo(models.User, {
       foreignKey: {
-        allowNull: true
+        allowNull: false
       }
     });
   };
