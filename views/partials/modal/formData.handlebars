@@ -20,6 +20,50 @@
           </div>
         </form>
       </div>
+      <div class="container">
+        
+              {{!-- Add ID number --}}
+            <div class="row">   
+                <div class="col-4"><div class = "form-group">
+                    <label  for = "documentID">Document ID</label>
+                </div>
+
+                <div class="col-4 ">
+                    <input type = "text" class = "form-control" id = "docIdNumber">
+                </div>
+            </div>   
+
+        {{!-- expiration Date --}}>
+            <div class="row">     
+                <div class="col-4 ">
+                    <label>Expiration Date</label>
+                </div>
+                <div class="col-4 "> 
+                    <input type = "text"  id = "docExpiration"  value = "text here" />
+                </div>
+            </div>
+                
+
+        {{!-- Add attachment --}}
+            <div class="row">
+                <div class="col-4 ">Add Attachment
+                </div>
+                <div class="col-4 ">
+                    <input type="file" name="docPDF" id="docPDF">
+                </div>
+            </div>
+
+        {{!-- Additional info --}}
+            <div class="row">
+                <div class="col-4 ">
+                    <label>Additional Information</label>
+                </div>
+                <div class="col-4 ">
+                    <input type = "text"  id = "addInfo" value = "text here" />
+                </div>
+            </div>
+
+        </div>
 
       <div class="modal-footer">
         <button id="submitForm" type="button" class="btn btn-primary"> Add Document </button>
