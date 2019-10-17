@@ -25,6 +25,8 @@ module.exports = {
     password: process.env.JAWS_PASS || null,
     database: 'DeathByDocuments_pro',
     details: {
+      host: process.env.JAWS_HOST,
+      port: 3306,
       dialect: 'mysql'
     }
   }

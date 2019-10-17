@@ -1,25 +1,34 @@
 [![Build Status](https://travis-ci.com/LMBoyle/project2.svg?branch=master)](https://travis-ci.com/LMBoyle/project2)
 
-# Project 2 Starter with Auth
+# Death By Documents
 
-A simple starter project with Express, Handlebars, Sequelize, Passport and Local Auth.
+A website to store all your important documents!
 
-## Live Example link:
-https://project2-starter-auth.herokuapp.com/
+Made by [Luke](https://github.com/LMBoyle), [LaMana](https://github.com/lamanaml), and [Michael](https://github.com/nightslife)
 
-## Live Link:
-https://project2-llmj.herokuapp.com/
+## Languages/Technologies 
+* HTML
+* Bootstrap
+* JavaScript
+* jQuery
+* MySQL
+* Heroku
+  * JawsDB MySQL
+* Stanford Javascript Crypto Library
 
-## Requirements:
+### NPM Packages
+* Express
+* Handlebars
+* Sequelize
 
-* Add `.env` file with the following content:
+## Future Development/Improvements
+- [ ] Mobile Responsive
+- [ ] Add a spouse or child and their information
+- [ ] Allow spouse to have a separate login so they can view certain documents of the user without the ability to edit
 
-```
-SEQUELIZE_USER=your_mysql_db_user
-SEQUELIZE_PASSWORD=your_mysql_db_password
-SEQUELIZE_HOST=your_mysql_db_host
-AUTH_SECRET=your_auth_secret_key
-ADMIN_USER_PWD=admin_password
-USER_PWD=user_pwd
-FORCE_SYNC=true_or_false
-```
+
+## Links
+
+[Deployed link](https://project2-llmj.herokuapp.com/)
+[Github Repo](https://github.com/LMBoyle/project2)
+[Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS5a7SNDTG42BTLpl3OPuyDWFO3RRZNlAqLUvID-WTwufSTsYLBGRKVBHEqvHUT0kiGx6Me5Lem9W7Q/pub?start=false&loop=false&delayms=3000)
