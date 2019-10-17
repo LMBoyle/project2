@@ -30,5 +30,7 @@ Made by [Luke](https://github.com/LMBoyle), [LaMana](https://github.com/lamanaml
 ## Links
 
 [Deployed link](https://project2-llmj.herokuapp.com/)
+
 [Github Repo](https://github.com/LMBoyle/project2)
+
 [Presentation](https://docs.google.com/presentation/d/e/2PACX-1vS5a7SNDTG42BTLpl3OPuyDWFO3RRZNlAqLUvID-WTwufSTsYLBGRKVBHEqvHUT0kiGx6Me5Lem9W7Q/pub?start=false&loop=false&delayms=3000)
