@@ -1,27 +1,13 @@
-<div class="modal" id="formInfo" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"> {{docType}} </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+{{> nav/nav-block user=false register=true}}
 
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="name"> First Name </label>
-            <input type="text" class="form-control" id="formFirstName" onclick="this.select()" value={{user.firstName}}>
-          </div>
-          <div class="form-group">
-            <label for="name"> Last Name </label>
-            <input type="text" class="form-control" id="formLastName" onclick="this.select()" value={{user.lastName}}>
-          </div>
-        </form>
-      </div>
+  <div class="container">
+<h1>Add a new {{docType}}</h1>
+    <!-- display certain sections based on docType
+    display all partials that are true -->
+<form>
+    <div class="form-group">
+        {{userInfo.firstName}}  {{userInfo.lasttName}}
 
-      <div class="container">
         {{!-- Add ID number --}}
             <div class="row">   
                 <div class="col-4"><div class = "form-group">
@@ -32,17 +18,15 @@
                     <input type = "text" class = "form-control" id = "docIdNumber">
                 </div>
             </div>   
-
+.............
         {{!-- expiration Date --}}>
             <div class="row">     
                 <div class="col-4 ">
                     <label>Expiration Date</label>
                 </div>
-
                 <div class="col-4 "> 
                     <input type = "text"  id = "docExpiration"  value = "text here" />
                 </div>
-              </div>
                 
 
         {{!-- Add attachment --}}
@@ -65,16 +49,10 @@
             </div>
 
         </div>
-
-
-
-
-
-
-      <div class="modal-footer">
-        <button id="submitForm" type="button" class="btn btn-primary"> Add Document </button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
-      </div>
     </div>
-  </div>
-</div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
