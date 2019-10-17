@@ -62,7 +62,8 @@ module.exports = (db) => {
       db.Documents.findAll({}).then(function (dbDocuments) {
         res.render('documents', {
           msg: 'Welcome ' + req.session.passport.user.firstName + '!',
-          doc: dbDocuments
+          doc: dbDocuments,
+          isloggedin: req.isAuthenticated()
         });
       });
     } else {
@@ -75,7 +76,8 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Document.findOne({ where: { id: req.params.id } }).then(function (dbDocument) {
         res.render('document-detail', {
-          document: dbDocument
+          document: dbDocument,
+          isloggedin: req.isAuthenticated()
         });
       });
     } else {
