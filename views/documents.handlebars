@@ -8,7 +8,7 @@
       <div class="col-4" style="padding-top: 15px">
         <ul class="list-group list-group-flush">
           <li class="list-group-item ">
-            <h2>Documents</h2>
+            <h2 class="card-title">Documents</h2>
           </li>
           {{#each doc}}
             {{#unless docCreated}}
@@ -30,9 +30,9 @@
 
       <div class="col-8" style="padding-top: 15px">
         <div class="card" style="width: 40rem;">
-          <img class="card-img-top" src="assets/images/documents.jpg" alt="Card image cap">
+          <img class="card-img-top" src="assets/images/documents.jpg" class="responsive" alt="documents image">
           <div class="card-body">
-            <p class="card-text">Your Documents</p>
+            <p class="card-title">Your Documents</p>
             <ul class="list-group list-group-flush">
               {{#each doc}}
                 {{#if docCreated}}
@@ -54,7 +54,7 @@
         </div>
         <div class="card" style="width: 40rem;">
 
-          <img class="card-img-top" src="assets/images/family.jpg" alt="Card image cap">
+          <img class="card-img-top" src="assets/images/family2.jpg" class="responsive" alt="family cap">
           <div class="card-body">
             <p class="card-title"> Your Family </p>
             <ul class="list-group list-group-flush">
@@ -81,3 +81,7 @@
 </div>
 
 {{> modal/formData}}
+
+{{> modal/login-block}}
+
+
