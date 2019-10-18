@@ -23,7 +23,7 @@ module.exports = {
   production: {
     username: process.env.JAWS_USER,
     password: process.env.JAWS_PASS || null,
-    database: 'DeathByDocuments_pro',
+    database: process.env.JAWS.DATA,
     details: {
       host: process.env.JAWS_HOST,
       port: 3306,
