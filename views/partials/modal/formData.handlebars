@@ -1,11 +1,18 @@
 <div class="modal" id="formInfo" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"> Add a new {{docType}} </h5>
+      <div class="modal-title">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+      </div> 
+       <div class="modal-container">
+        {{#if docType}}
+        <h5 class="modal-body"> Add a new {{docType}} </h5>
+        {{else}}
+        <b >What type of Document is this:</b>
+        <input type = "text" class="form-control"  id = "newDocType"   />
+        {{/if}}
       </div>
 
       <div class="modal-body">
@@ -19,7 +26,7 @@
             <input type="text" class="form-control" id="formLastName" onclick="this.select()" value={{user.lastName}}>
           </div>
       
-         <hr>
+          <hr>
         
           {{!-- Add ID number --}}
             <div class="row">   
