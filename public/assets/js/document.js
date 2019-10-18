@@ -13,3 +13,8 @@ $('.addForm').on('click', function (event) {
   }
   $('#formInfo').modal('show');
 });
+
+$('.trashForm').on('click', function (event) {
+  event.preventDefault();
+  $('#deleteForm').modal('show');
+});
