@@ -20,7 +20,7 @@ $('.trashForm').on('click', function (event) {
   $('#deleteForm').modal('show');
 });
 
-$("#addInput").on("click", function (event) {
+$('#addInput').on('click', function (event) {
   event.preventDefault();
   const extraDiv = $('#extraInfo');
   const rowDiv = $('<div class="form-row">');
