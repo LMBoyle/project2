@@ -62,6 +62,7 @@ module.exports = (db) => {
       db.Documents.findAll({}).then(function (dbDocuments) {
         res.render('documents', {
           msg: 'Welcome ' + req.session.passport.user.firstName + '!',
+          user: req.session.passport.user,
           doc: dbDocuments,
           isloggedin: req.isAuthenticated()
         });
