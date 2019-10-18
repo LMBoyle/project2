@@ -36,7 +36,7 @@ describe('GET /api/documents', function () {
         expect(responseStatus).to.equal(200);
 
         expect(responseBody)
-          .to.be.an('object')
+          .to.be.an('array')
           .that.has.lengthOf(2);
 
         expect(responseBody[0])
