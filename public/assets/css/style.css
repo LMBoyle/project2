@@ -52,6 +52,10 @@ body {
   width: 1000px;
 }
 
+#main-container {
+  width:700px;
+}
+
 [data-useremail="true"] {
   color: white !important;
 }
