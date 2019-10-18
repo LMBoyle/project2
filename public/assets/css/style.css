@@ -14,9 +14,10 @@ body {
 }
 
 .responsive {
-  width: 100%;
-  height: auto;
-  object-fit: cover; 
+  max-width: 100%;
+  height: auto; /* default */ 
+  object-fit: cover;
+  
 }
 .btn .btn-link {
   color:white;
@@ -84,9 +85,18 @@ hr {
   font-family: 'Playfair Display', serif;
   font-size:20px;
 }
-
+.copy {
+  font-family: 'Libre+Baskerville', serif;
+  font-size:25px;
+  
+}
 .icon {
   width:25px;
   height:25px;
 }
+
+.col-5 {
+  padding:15px;
+}
+
 

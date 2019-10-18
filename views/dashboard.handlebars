@@ -2,8 +2,13 @@
 
 <div id="main-container" class="container">
   <div class="jumbotron text-center header-wrap" align="center">
-    <p class="lead">Welcome to <strong>Death by Documents</strong></p>
+    <p class="lead " >Welcome to <strong>Death by Documents</strong></p>
     <hr class="my-4">
+    
+            <p class="copy"> Death by Documents is the smartest way to securely store, manage and share files online. This app allows you to go paperless and securely store documents for you and your family.  </p>
+            <p class="copy">Don't live without it!</p>
+          
+    <hr class="my-4">         
     <div>
       {{#if isloggedin}}
         You are logged in as {{user.firstName}}
@@ -13,6 +18,9 @@
       {{else}}
         <p>You need to <a href="#" class="login-modal"> log in </a> to use this app.</p>
       {{/if}}
+          
+          
+      
       <h5 id="login-err-msg"></h5>
     </div>
   </div>
