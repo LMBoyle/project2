@@ -32,9 +32,14 @@ $('#addInput').on('click', function (event) {
   rowDiv.append(titleDiv).append(formDiv);
   extraDiv.append(rowDiv);
 });
+
 $('.trashForm').on('click', function (event) {
   event.preventDefault();
   const id = $(this).attr('data-docTableId');
   console.log(id);
-  $.post('api/documents/' + id).done(location.reload());
-})
+  $.post('api/documents/' + id).then(function(data) {
+    if (data === "done") {
+      (location.reload());
+    }
+  });
+});
