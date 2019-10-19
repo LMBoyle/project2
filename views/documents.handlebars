@@ -40,7 +40,7 @@
                     <button type="button" class="btn btn-link float-right" data-docType={{docType}}>
                       <i class="far fa-edit"></i>
                     </button>
-                    <button type="button" class="btn btn-link float-right" data-docType={{docType}}>
+                    <button type="button" class="btn btn-link float-right trashForm" data-docType={{docType}}>
                       <i class="far fa-trash-alt"></i>
                     </button>
                   </li>
@@ -81,6 +81,8 @@
 </div>
 
 {{> modal/formData}}
+
+{{> modal/deleteModal}}
 
 {{> modal/login-block}}
 
