@@ -11,9 +11,53 @@ module.exports = (passport, db) => {
           password: req.body.password,
           firstName: req.body.firstName,
           lastName: req.body.lastName
-        };
-
-        return db.User.create(newUser).then(() => {
+        };   
+        return db.User.create(newUser).then(async () => {
+          db.User.findOne({order: [['createdAt', 'DESC']]}).then(function(results){;
+          console.log(results.id)
+          db.Documents.create({
+            docType: "Last Will & Testament",
+            docCreated: false,
+            docFirstName: results.firstName,
+            docLastName: results.lastName,
+            UserId: results.id
+          });
+          db.Documents.create({
+            docType: "Drivers License",
+            docCreated: false,
+            docFirstName: results.firstName,
+            docLastName: results.lastName,
+            UserId: results.id
+          });
+          db.Documents.create({
+            docType: "Passport",
+            docCreated: false,
+            docFirstName: results.firstName,
+            docLastName: results.lastName,
+            UserId: results.id
+          });
+          db.Documents.create({
+            docType: "Bank Accounts",
+            docCreated: false,
+            docFirstName: results.firstName,
+            docLastName: results.lastName,
+            UserId: results.id
+          });
+          db.Documents.create({
+            docType: "Social Media",
+            docCreated: false,
+            docFirstName: results.firstName,
+            docLastName: results.lastName,
+            UserId: results.id
+          });
+          db.Documents.create({
+            docType: "Documents and Photos",
+            docCreated: false,
+            docFirstName: results.firstName,
+            docLastName: results.lastName,
+            UserId: results.id
+          });
+        })
           res.status(200).json({ message: 'Registered successfully.' });
         });
       }).catch((err) => {

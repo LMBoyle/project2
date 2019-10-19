@@ -15,15 +15,15 @@
         </div>
 
       <div class="modal-body">
-        <form>
+        <form id="docForms" action="/api/documents" method="POST" enctype="multipart/form-data">
           <div class="form-row">
             <div class="form-group col">
               <label for="name"> First Name </label>
-              <input type="text" class="form-control" id="formFirstName" onclick="this.select()" value="{{user.firstName}}">
+              <input type="text" name = 'firstName' class="form-control" id="formFirstName" onclick="this.select()" value="{{user.firstName}}">
             </div>
             <div class="form-group col">
               <label for="name"> Last Name </label>
-              <input type="text" class="form-control" id="formLastName" onclick="this.select()" value="{{user.lastName}}">
+              <input type="text" name='lastName' class="form-control" id="formLastName" onclick="this.select()" value="{{user.lastName}}">
             </div>
           </div>
 
@@ -35,7 +35,7 @@
               <label for="documentID"> Document ID </label>
             </div>
             <div class="form-group col">
-              <input type="text" class="form-control" id="docIdNumber" placeholder="1234567890">
+              <input type="text" name='docIdNumber' class="form-control" id="docIdNumber" placeholder="1234567890">
             </div>
           </div>
 
@@ -45,7 +45,7 @@
               <label> Expiration Date </label>
             </div>
             <div class="form-group col">
-              <input type="text" class="form-control" id="docExpiration" placeholder="yyyy-mm">
+              <input type="text" name='docExpiration' class="form-control" id="docExpiration" placeholder="yyyy-mm">
             </div>
           </div>
 
@@ -56,7 +56,7 @@
               Add Attachment
             </div>
             <div class="form-group col-md-5">
-              <input type="file" name="docPDF" id="docPDF">
+              <input type="file" name="filename" id="docPDF">
             </div>
           </div>
 
@@ -73,7 +73,7 @@
           <br/>
 
           <div class="modal-footer">
-            <button id="submitForm" type="button" class="btn btn-primary"> Add Document </button>
+            <button id="submitForm" type="submit" class="btn btn-primary"> Add Document </button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
           </div>
       </div>
