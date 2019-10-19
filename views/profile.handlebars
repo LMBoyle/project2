@@ -32,7 +32,41 @@
         <input type="password" class="form-control" id="inputPassword" value="{{userInfo.password}}">
       </div>
     </div>
+    <hr>
+     <h3>Emergency Contact</h3>
+      <h5>In the event of an emergency, list the people who should get access to this account.</h5>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputFirst">First Name</label>
+        <input type="text" class="form-control" id="inputFirst" value="{{emerConInfo.firstName}}" placeholder="John">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputLast">Last Name</label>
+        <input type="text" class="form-control" id="inputLast" value="{{emerConInfo.lastName}}" placeholder="Doe">
+      </div>
+    </div>
+   
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputemail">Email</label>
+        <input type="text" class="form-control" id="inputEmail" value="{{emerConInfo.email}}">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword">Choose a password for them:</label>
+        <input type="text" class="form-control" id="inputPassword" value="{{emerConInfo.password}}">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+              </div>
+      <div class="form-group col-md-6">
+       <button type="submit"   class="btn btn-warning">Add Another</button>
+      </div>
+    </div>
 
+
+
+   <hr>
     <div>
       <button type="submit" id="update-user" data-id="{{userInfo.id}}" class="btn btn-primary">Update</button>
       {{#unless userInfo.isAdmin}}
