@@ -69,7 +69,7 @@ module.exports = function (db) {
           docExpiration: null,
           docPDF: null,
           docFileName: null},
-          {where: {id: req.params.id}});
+          {where: {id: req.params.id}}).then(res.send("done"));
       } catch (err) { console.log(err); }
       
     }

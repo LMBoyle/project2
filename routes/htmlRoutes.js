@@ -59,7 +59,7 @@ module.exports = (db) => {
   // Load landing index page
   router.get('/documents', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Documents.findAll().then(function (dbDocuments) {
+      db.Documents.findAll({}).then(function (dbDocuments) {
         res.render('documents', {
           msg: 'Welcome ' + req.user.firstName + '!',
           user: req.session.passport.user,
