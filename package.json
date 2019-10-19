@@ -43,6 +43,7 @@
     "cookie-parser": "^1.4.3",
     "dotenv": "^7.0.0",
     "express": "^4.17.1",
+    "express-fileupload": "^1.1.6-alpha.5",
     "express-handlebars": "^3.0.2",
     "express-session": "^1.15.6",
     "helmet": "^3.21.1",
@@ -52,7 +53,8 @@
     "node-pre-gyp": "^0.13.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^5.19.6"
+    "sequelize": "^5.19.6",
+    "sjcl": "^1.0.8"
   },
   "devDependencies": {
     "chai": "^4.2.0",
