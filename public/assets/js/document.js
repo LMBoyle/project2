@@ -36,5 +36,5 @@ $('.trashForm').on('click', function (event) {
   event.preventDefault();
   const id = $(this).attr('data-docTableId');
   console.log(id);
-  $.post('api/documents/' + id).then(location.reload());
+  $.post('api/documents/' + id).done(location.reload());
 })
